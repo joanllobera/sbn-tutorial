@@ -44,11 +44,6 @@ It can also be part of a TPPlotSentence within a story plot (TPPlot).
             TP.GetAgent(mindID).transform.localScale = TP.GetAgent(mindID).transform.localScale * 2.0f;
         }
 
-        public void TargetDoubleSize()
-        {
-            if (target)
-                target.transform.localScale = target.transform.localScale * 2.0f;
-        }
         public void TargetMultiplySize(float times)
         {
             if (target)
@@ -67,9 +62,10 @@ It can also be part of a TPPlotSentence within a story plot (TPPlot).
 
         }
 
+
+        //! \todo NOT TESTED
         public void selectClosestCharacterWithRole(string roleName)
         {
-            //TP.getAgentsWithPersonality
 
             target = TPPerception.FindClosestCharacterWithRole(mindID, roleName);
 
@@ -86,7 +82,24 @@ It can also be part of a TPPlotSentence within a story plot (TPPlot).
 
         }
 
+        public void selectMyselfAsTarget()
+        {
+           this.target = TP.GetAgent(mindID).gameObject;
 
+
+        }
+
+        public void rotateX90()
+        {
+            if (target != null)
+            {
+
+                target.transform.Rotate(90, 0, 0);
+
+            }
+
+
+        }
 
         public void selectTargetFromAgentCollider(string tag)
         {
@@ -231,7 +244,7 @@ It can also be part of a TPPlotSentence within a story plot (TPPlot).
             {
                 Vector3 dist = go.transform.position - me.transform.position;
                 //float angle=Vector3.Angle(dist, me.transform.forward);
-                Vector3 increment =  - speed * dist.normalized * Time.deltaTime;
+                Vector3 increment =   speed * dist.normalized * Time.deltaTime;
                 increment.y = 0.0f;//to prevent it from flying or going down
                 me.transform.Translate(increment);
             }

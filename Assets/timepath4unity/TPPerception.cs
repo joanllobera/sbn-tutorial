@@ -123,7 +123,7 @@ using timepath4unity;
 
 
 
-
+        //! \todo NOT TESTED
         //! are there several of this tag?
         public void isTargetNearSiblings()
         {
@@ -139,6 +139,8 @@ using timepath4unity;
                 value = 0.0;
         }
 
+
+        //! \todo NOT TESTED
         public void isTargetNotNearSiblings()
         {
             isTargetNearSiblings();
