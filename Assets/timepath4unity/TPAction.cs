@@ -13,303 +13,266 @@ TPPAction implements a Timepath action.
 It will be performed by a TPPersonality. 
 It can also be part of a TPPlotSentence within a story plot (TPPlot).
 
-
+ Important:  
+do NOT declare class variables, since each Action defined will be executed separately (similar to static methods). 
+ It will work for methods called within one same Action, but it is dangerous.
+  
+To deal with objects of the scene, it is usefull to declare a mental bag with the elements needed
+To get the agent, use:  TPAgent me = TP.GetAgent(mindID);
+ 
+ and eventually the ADAPT body:  
+ Body b = me.GetComponent<Body>();
+or the mental bag:
+  TPMentalBag bag = me.GetComponent<TPMentalBag>();
+ 
+ 
+\todo initialize me and my body at startup 
+ 
+ \todo think if each function can/should return a success bool, as a precondition for the following functions to execute
+  
 */
-    public  class TPAction : TPActionBase
+public  class TPAction : TPActionBase
     {
 
 
 
-        #region VARIABLES USED BY SOME ACTION FUNCTIONS
+        #region DO NOT USE CLASS VARIABLES IN TPAction
 
-        GameObject target = null;
-
-        float speed = 1.0f;
+        
         #endregion
 
         #region ACTIONS
 
 
-        // a reference to the animator on the character
-        static int deadState = Animator.StringToHash("Base Layer.Dying");
-
-
-
-        public void IGrowLikeActivation()
+        public void approachNearestObjectWithTag(string tag)
         {
-            this.transform.localScale = this.transform.localScale * (float)this.decisiveness;
-        }
-        public void IDoubleSize()
-        {
-            TP.GetAgent(mindID).transform.localScale = TP.GetAgent(mindID).transform.localScale * 2.0f;
-        }
+            GameObject go = TPPerception.FindClosestObjectTagged(mindID, tag);
 
-        public void TargetMultiplySize(float times)
-        {
-            if (target)
-                target.transform.localScale = target.transform.localScale * times;
-        }
-
-        public void selectClosestObjectWithTag(string tag)
-        {
-            if (this.target == null)
-                this.target = TPPerception.FindClosestObjectTagged(mindID, tag);
-        }
-        public void approachTarget()
-        {
-            if (target != null)
-                approach(mindID, target, (float)this.ActionIntensity);
-
-        }
-
-
-        //! \todo NOT TESTED
-        public void selectClosestCharacterWithRole(string roleName)
-        {
-
-            target = TPPerception.FindClosestCharacterWithRole(mindID, roleName);
-
-        }
-
-        public void approachObjectWithTag(string tag)
-        {
-            approach(mindID, TPPerception.FindClosestObjectTagged(mindID, tag), (float)this.ActionIntensity);
-        }
-
-        public void setSpeed(float s)
-        {
-            speed = s;
-
-        }
-
-        public void selectMyselfAsTarget()
-        {
-           this.target = TP.GetAgent(mindID).gameObject;
-
-
-        }
-
-        public void rotateX90()
-        {
-            if (target != null)
-            {
-
-                target.transform.Rotate(90, 0, 0);
-
-            }
-
-
-        }
-
-        public void selectTargetFromAgentCollider(string tag)
-        {
-
-            GameObject go = TP.GetAgent(mindID).getObjectCollidedWithTag(tag);
             if (go)
             {
-                target = go;
+                TPAgent me = TP.GetAgent(mindID);
+                Body b = me.GetComponent<Body>();
+
+                b.NavGoTo(go.transform.position);
             }
+
         }
 
 
-        public void PickSelectedObjectAsResource(string resname)
+        public void approachObjectCalled(string name)
         {
-            if (target != null)
+
+            GameObject go = GameObject.Find(name);
+            if(go)
             {
-                //! we assumes there exists a resource named as the tag of the selected gameObject
-                TP.GetAgent(mindID).MyPerso.AddResourceUnits(resname, 1.0f);
-                Destroy(target);
+                TPAgent me = TP.GetAgent(mindID);
+                Body b = me.GetComponent<Body>();
+
+                b.NavGoTo(go.transform.position);
+
             }
+
+
         }
 
-        //! \todo these functions should allow selecting the tag from a popup list
-        public void changeTargetTag(string newTag)
+    
+        public void leaveM()
         {
-            if (target != null)
+            TPAgent me = TP.GetAgent(mindID);
+            Body b = me.GetComponent<Body>();
+
+            TPMentalBag bag = me.GetComponent<TPMentalBag>();
+            
+            if (bag.M)
             {
-                if (target.tag.Equals(newTag))
+                TPResource res = me.MyPerso.GetResourceByName("captured_meteorite");
+                res.ResMaxAvailable = 0.0f;
+
+                bag.M.GetComponent<Rigidbody>().isKinematic = false;
+
+                bag.M.GetComponent<Rigidbody>().useGravity = true;
+                
+                //and we put it back with all the meteorites in the hierarchy
+                GameObject temp = GameObject.Find("Meteorites");
+                if (temp)
                 {
-                    Debug.Log("you are trying to change the tag of an object which already has the tag " + newTag);
-                    return;
+                    bag.M.transform.parent = temp.transform;
                 }
-                target.tag = newTag;
-                target.name = newTag;
-                target.transform.parent = null;
+                bag.M = null;
+
+              
+              
+
             }
         }
 
-        public void say(string text)
-        {
-            Vector3 pos = TP.GetAgent(mindID).transform.position + 2.0f * Vector3.up;
-
-            Debug.Log(TP.GetAgent(mindID).name + ": " + text);
-            //! \todo characters must have a hidden LABEL field 
-        }
+    
+          
+    public void takeMhome()
+    {
 
 
-        //! it removes any tags and leaves it as a son.
-        public void LeaveWithSelectedObjectResourceNamed(string resourceName)
-        {
-            if (target != null)
-            {
+        TPAgent me = TP.GetAgent(mindID);
+        Body b = me.GetComponent<Body>();
+        TPMentalBag bag = me.GetComponent<TPMentalBag>();
+        approachNearestObjectWithTag(bag.destinationTag);
 
-                GameObject resourceInstance = TP.GetAgent(mindID).MyPerso.GetResourceUnits(resourceName, 1.0f);
 
-                if (resourceInstance)
+
+
+          RaycastHit hitInfo;
+            Vector3 dir = transform.TransformDirection(Vector3.down);
+
+
+            //define the region of arrival with your tag. make sure the baking is done AFTER the regions are frozen, and that they all are rendered.
+
+                if (Physics.Raycast(transform.position , dir, out hitInfo, 10))
                 {
-                    resourceInstance.SetActive(true);
-                    if (target != null) { 
-                    try
+
+                    if (hitInfo.collider.tag == bag.destinationTag)
                     {
-                        resourceInstance.tag = target.tag;
+
+                        leaveM();
+
                     }
-                    catch
-                    {
-                        Debug.Log("trouble retaging object" + resourceInstance.name);
-                    }
+                  
                 }
-                    resourceInstance.transform.parent = target.transform;
 
-                    Vector3 temp = Random.onUnitSphere;
-                    temp.Scale(new Vector3(1.0f, 0.0f, 1.0f));
-                    resourceInstance.transform.position = target.transform.position + temp;
-                }
-            }
-        }
-
-
-        public void unselectTarget()
-        {
-
-            this.target = null;
-
-        }
 
         /*
-        public void setAnimFloat(string paramName){
-            //anim.SetFloat (animFloat);
-            }
-	
-        */
 
-        //a function to turn around an object	
+      
+//        if ( b.NavIsAtTarget())
+        bool check = b.NavHasArrived();
+        Debug.Log("target position:" + b.NavTarget().ToString() + " my position: " + b.transform.position.ToString() +" " + check.ToString() );
+        if (b.NavHasArrived())
 
-        /*
-        public void turnAroundObject(GameObject go){
-
-            TPAgent me=TPPersonalityTools.getAgent(agentID);
-		
-            Vector3 dist=me.transform.position - go.transform.position;
-            float angle=Vector3.Angle(dist, me.transform.forward);
-            turn (agentID,(180.0f-angle)/180.0f);
-            runForward (agentID,1.0f);
-            putToFloor ();
-        }*/
-
-        #endregion
-
-
-        #region OTHER USEFUL FUNCTIONS
-
-        //! a function to avoid an object
-        void avoid(int agentID, GameObject go, float d)
         {
-            TPAgent me = TP.GetAgent(agentID);
-            Vector3 dist = me.transform.position - go.transform.position;
-            //float angle=Vector3.Angle(dist, me.transform.forward);
-            Vector3 increment = speed * Mathf.Clamp((float)d, 0.4f, 1.0f) * dist.normalized * Time.deltaTime;
-            me.transform.Translate(increment);
-            Debug.Log("I am avoiding" + go.name + " " + d + " " + increment);
-            putToFloor();
+            b.NavStop();
+            leaveM();
 
-            /*
-            turn (agentID, angle/180.0f);
-            if(angle  < 30 ){
-                runForward (agentID,d);	
-                Debug.Log ("I am avoiding" + go.name);
-            }
-            else{
-                //Debug.Log ("I am not avoiding any more " + go.name);
-                me.GetComponent<Animator>().speed = 0.0f;
-            }*/
         }
+*/
 
 
-        //a function to approach an object
-        void approach(int agentID, GameObject go, float d)
+    }
+
+
+
+
+
+
+        public void selectM()
         {
-            TPAgent me = TP.GetAgent(agentID);
 
-            if (go != null)
+            TPAgent me = TP.GetAgent(mindID);
+            Body b = me.GetComponent<Body>();
+            TPMentalBag bag = me.GetComponent<TPMentalBag>();
+
+            if(bag.M ==null){
+                GameObject go = TPPerception.FindClosestObjectTagged(mindID, "pickme");
+                if(go != null){
+                 //   Debug.Log("gameObject is:" + go.name);
+                    bag.M = go.GetComponent<Meteorite>();
+                    bag.M.tag = "selected";
+                }
+            }
+            else if (bag.M.tag != "selected") //because it fell on another region, for example
             {
-                Vector3 dist = go.transform.position - me.transform.position;
-                //float angle=Vector3.Angle(dist, me.transform.forward);
-                Vector3 increment =   speed * dist.normalized * Time.deltaTime;
-                increment.y = 0.0f;//to prevent it from flying or going down
-                me.transform.Translate(increment);
+                leaveM();
+
             }
-            putToFloor();
 
 
         }
-
-
-
-
-        void turn(int agentID, float h)
+     
+        public void aproachM(float minDist)
         {
-            TPAgent me = TP.GetAgent(agentID);
-            me.transform.Rotate(Vector3.up, h);
+            
+            
+            TPAgent me = TP.GetAgent(mindID);
+            Body b = me.GetComponent<Body>();
+            TPMentalBag bag = me.GetComponent<TPMentalBag>();
+
+
+
+
+
+            if (bag.M)
+            { 
+                //we approach
+                if ((transform.position - bag.M.transform.position).sqrMagnitude > minDist) //we are more far appart than 1 meter
+                {
+                    b.NavGoTo(bag.M.transform.position);
+
+                }else { //we are closer than 1 meter
+                    b.NavStop();
+                }
+            }
         }
 
 
-        void runForward(int agentID, float v)
+        public void lookM(float lookDist)
         {
+            TPAgent me = TP.GetAgent(mindID);
+            Body b = me.GetComponent<Body>();
+            TPMentalBag bag = me.GetComponent<TPMentalBag>();
 
-            TPAgent me = TP.GetAgent(agentID);
-            Animator anim = me.GetComponent<Animator>();
-            AnimatorStateInfo currentBaseState = anim.GetCurrentAnimatorStateInfo(0);// set our currentState variable to the current state of the Base Layer (0) of animation
-            anim.speed = 1.5f;
-
-            anim.SetFloat("forward", v);							// set our animator's float parameter 'Speed' equal to the vertical input axis				
-
-            if (currentBaseState.nameHash != deadState)
+            if (bag.M)
             {
 
-                me.transform.Translate(5 * anim.speed * v * Vector3.forward * Time.deltaTime);
+                if ((transform.position - bag.M.transform.position).sqrMagnitude < lookDist)
+                    //we reach
 
+                    b.HeadLookAt(bag.M.transform.position);
 
             }
-            putToFloor();
-
         }
 
-        void putToFloor()
-        {
+        public void reachM(float reachDist){
+            TPAgent me = TP.GetAgent(mindID);
+            Body b = me.GetComponent<Body>();
+            TPMentalBag bag = me.GetComponent<TPMentalBag>();
 
-
-            // To stick it to the ground, we Raycast down from the center of the character.. 
-            Ray ray = new Ray(transform.position + Vector3.up, -Vector3.up);
-            RaycastHit hitInfo = new RaycastHit();
-
-            transform.Translate(Vector3.down * 1.0f);
-
-            transform.Translate(Vector3.down * hitInfo.distance);
-
+            if (bag.M)
+            {
+                if ((transform.position - bag.M.transform.position).sqrMagnitude < reachDist)
+                    b.ReachFor(bag.M.transform.position);
+            }
         }
 
 
-
-        void die(int agentID, float a)
-        {
-
-            TPAgent me = TP.GetAgent(agentID);
-            Animator anim = me.GetComponent<Animator>();
-            anim.SetFloat("energy", -1.0f);
+        public void takeControlOverM(float reachDist){
+            TPAgent me = TP.GetAgent(mindID);
+            Body b = me.GetComponent<Body>();
+            TPMentalBag bag = me.GetComponent<TPMentalBag>();
 
 
+            if (bag.M)
+            {
+                if ((transform.position - bag.M.transform.position).sqrMagnitude < reachDist)
+                {
+
+                    bag.M.transform.parent = b.transform;
+                    bag.M.tag = "picked";
+                 
+                    bag.M.GetComponent<Rigidbody>().isKinematic = false; //it follows the hand.
+                    bag.M.GetComponent<Rigidbody>().useGravity = false;
+
+                    bag.M.transform.position += new Vector3(0.0f, 2.0f, 0.0f);
+                    
+                    b.ReachStop();
+                    b.HeadLookStop();
+                    
+                    me.MyPerso.GetResourceByName("captured_meteorite").ResMaxAvailable = 1.0f;
+
+                } 
+            }
         }
 
+
+
+    
 
 
 

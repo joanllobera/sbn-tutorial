@@ -10,11 +10,25 @@ using System.Collections.Generic;
  \date August 2014
  \details 
  
- 	Each perception can be created through the Perception Inspector, which allows selecting the functions available in TPPerception. 
- 	To define a new perception, it is enough to define a function that does not take more than one parameter, and which changes the double "value".
+    Each perception can be created through the Perception Inspector, which allows selecting the functions available in TPPerception. 
+    To define a new perception, it is enough to define a function that does not take more than one parameter, and which changes the double "value".
 
- 	Accesory variables can also be defined (see for example the variables near and far, and the function isTagNear).
-
+    Important:  
+do NOT declare class variables, since each Action defined will be executed separately (similar to static methods). 
+ It will work for methods called within one same Perception, but it is dangerous.
+  
+To deal with objects of the scene, it is usefull to declare a mental bag with the elements needed
+To get the agent, use:  TPAgent me = TP.GetAgent(mindID);
+ 
+ and eventually the ADAPT body:  
+ Body b = me.GetComponent<Body>();
+or the mental bag:
+  TPMentalBag bag = me.GetComponent<TPMentalBag>();
+ * 
+ * 
+ * 
+ * 
+ \todo find out how to connect a perception to a physics simulation (eventually through mental bag?)
  \sa  TPPersonality TPPlot
 */
 using timepath4unity;
@@ -25,26 +39,58 @@ using timepath4unity;
     {
 
 
-        #region VARIABLES USED BY SOME PERCEPTION FUNCTIONS
+        #region DO NOT USE CLASS VARIABLES IN TPPerception
 
-        float far = 100.0f;
-        float near = 0.0f;
-        GameObject target = null;
+       
         #endregion
 
 
 
         #region PERCEPTION FUNCTIONS AVAILABLE IN MENU_______________________________________________________________________________________
-        public void perceiveLow()
-        {
 
-            value = 0.096;
+       
+
+        
+   
+
+
+
+
+        public void IamOnRegion(GameObject region)
+        {
+            TPAgent me = TP.GetAgent(mindID);
+       
+            TPMentalBag bag = me.GetComponent<TPMentalBag>();
+
+
+            RaycastHit hitInfo;
+            Vector3 dir = transform.TransformDirection(Vector3.down);
+
+
+            //define the region of arrival with your tag. make sure the baking is done AFTER the regions are frozen, and that they all are rendered.
+
+                if (Physics.Raycast(transform.position , dir, out hitInfo, 10))
+                {
+                    Debug.Log("collided tag: " + hitInfo.collider.tag);
+
+                    if (hitInfo.collider.tag == bag.destinationTag )
+                    {
+
+                        value = 1.0f;
+
+                    }else{
+                        value = 0.0f;
+
+
+                    }
+                }
+           	
+
+
         }
 
-        public void perceiveHigh()
-        {
-            value = 0.98;
-        }
+
+
 
 
         public void getResourceCount(string name)
@@ -72,80 +118,10 @@ using timepath4unity;
                 value = 0.0;
         }
 
-
-
-
-
+      
 
         //! \todo allow functions not affecting value to run only at startup
-        public void defineNear(float near)
-        {
-            this.near = near;
-
-        }
-
-        public void defineFar(float far)
-        {
-            this.far = far;
-        }
-
-
-
-        //! it gives a fuzzy value between far and near
-        public void isTagNear(string theTag)
-        {
-
-            double isNear;
-            GameObject NearestObject = FindClosestObjectTagged(this.mindID, theTag);
-
-            if (NearestObject == null)
-                isNear = 0.0;
-            else
-            {
-                double dist = (NearestObject.transform.position - TP.GetAgent(this.mindID).transform.position).magnitude;
-
-                if (dist > far)
-                    isNear = 0.0;
-                else if (dist < near)
-                    isNear = 1.0;
-                else
-                    isNear = (double)(1.0f - (dist - near) / (far - near));
-            }
-            value = isNear;
-        }
-
-        public void selectNearestObjectWithTag(string theTag)
-        {
-            target = FindClosestObjectTagged(this.mindID, theTag);
-        }
-
-
-
-
-
-        //! \todo NOT TESTED
-        //! are there several of this tag?
-        public void isTargetNearSiblings()
-        {
-            if (target != null && target.tag != "")
-            {
-                GameObject[] ObjectsInRadius = FindObjectTaggedInRadius(target, target.tag, far, near);
-                if (ObjectsInRadius.Length > 1)
-                    value = 1.0;
-                else
-                    value = 0.0;
-            }
-            else
-                value = 0.0;
-        }
-
-
-        //! \todo NOT TESTED
-        public void isTargetNotNearSiblings()
-        {
-            isTargetNearSiblings();
-            value = 1.0 - value;
-        }
+          
 
 
 
@@ -164,7 +140,7 @@ using timepath4unity;
             // Iterate through them and find the closest one
             foreach (GameObject go in gos)
             {
-                float curDist = (go.transform.position - position).magnitude;
+                float curDist = (go.transform.position - position).sqrMagnitude;
                 if (curDist < distance)
                 {
                     closest = go;
@@ -178,9 +154,15 @@ using timepath4unity;
                 return null;
             }
 
-
+            
             return closest;
         }
+
+
+
+
+
+
 
         public static GameObject FindClosestCharacterWithRole(int myID, string roleName)
         {
