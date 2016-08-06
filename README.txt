@@ -1,7 +1,5 @@
 a demo to use timepath4unity
 
-
-
 IDEAL install 
 (not working yet, ofr some reason teh SKILLS are forgotten??):
 TODO: 
