@@ -72,3 +72,6 @@ ScriptMapper
 *.sln.docstates
 *.DotSettings
 *.csproj
+
+
+Assets/uSequencer
