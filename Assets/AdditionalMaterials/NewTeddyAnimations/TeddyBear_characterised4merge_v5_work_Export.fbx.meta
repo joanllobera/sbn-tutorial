@@ -1,0 +1,1032 @@
+fileFormatVersion: 2
+guid: c6ce5c408f80f4640bdcdfff4fd56e27
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: ChestJoint2
+    100002: HeadJoint2
+    100004: HipJoint2
+    100006: Left_AnkleJoint2
+    100008: Left_ArmJoint2
+    100010: Left_ElbowJoint2
+    100012: Left_KneeJoint2
+    100014: Left_ShoulderJoint2
+    100016: Left_ThighJoint2
+    100018: Left_ToeJoint2
+    100020: Left_WristJoint2
+    100022: ossetModificat_Ctrl:ChestEndEffector
+    100024: ossetModificat_Ctrl:ChestOriginEffector
+    100026: ossetModificat_Ctrl:Head
+    100028: ossetModificat_Ctrl:HeadEffector
+    100030: ossetModificat_Ctrl:Hips
+    100032: ossetModificat_Ctrl:HipsEffector
+    100034: ossetModificat_Ctrl:LeftAnkleEffector
+    100036: ossetModificat_Ctrl:LeftArm
+    100038: ossetModificat_Ctrl:LeftElbowEffector
+    100040: ossetModificat_Ctrl:LeftFoot
+    100042: ossetModificat_Ctrl:LeftFootEffector
+    100044: ossetModificat_Ctrl:LeftForeArm
+    100046: ossetModificat_Ctrl:LeftHand
+    100048: ossetModificat_Ctrl:LeftHipEffector
+    100050: ossetModificat_Ctrl:LeftKneeEffector
+    100052: ossetModificat_Ctrl:LeftLeg
+    100054: ossetModificat_Ctrl:LeftShoulder
+    100056: ossetModificat_Ctrl:LeftShoulderEffector
+    100058: ossetModificat_Ctrl:LeftToeBase
+    100060: ossetModificat_Ctrl:LeftUpLeg
+    100062: ossetModificat_Ctrl:LeftWristEffector
+    100064: ossetModificat_Ctrl:Reference
+    100066: ossetModificat_Ctrl:RightAnkleEffector
+    100068: ossetModificat_Ctrl:RightArm
+    100070: ossetModificat_Ctrl:RightElbowEffector
+    100072: ossetModificat_Ctrl:RightFoot
+    100074: ossetModificat_Ctrl:RightFootEffector
+    100076: ossetModificat_Ctrl:RightForeArm
+    100078: ossetModificat_Ctrl:RightHand
+    100080: ossetModificat_Ctrl:RightHipEffector
+    100082: ossetModificat_Ctrl:RightKneeEffector
+    100084: ossetModificat_Ctrl:RightLeg
+    100086: ossetModificat_Ctrl:RightShoulder
+    100088: ossetModificat_Ctrl:RightShoulderEffector
+    100090: ossetModificat_Ctrl:RightToeBase
+    100092: ossetModificat_Ctrl:RightUpLeg
+    100094: ossetModificat_Ctrl:RightWristEffector
+    100096: ossetModificat_Ctrl:Spine
+    100098: Right_AnkleJoint2
+    100100: Right_ArmJoint2
+    100102: Right_ElbowJoint2
+    100104: Right_KneeJoint2
+    100106: Right_ShoulderJoint2
+    100108: Right_ThighJoint2
+    100110: Right_ToeJoint2
+    100112: Right_WristJoint2
+    100114: //RootNode
+    400000: ChestJoint2
+    400002: HeadJoint2
+    400004: HipJoint2
+    400006: Left_AnkleJoint2
+    400008: Left_ArmJoint2
+    400010: Left_ElbowJoint2
+    400012: Left_KneeJoint2
+    400014: Left_ShoulderJoint2
+    400016: Left_ThighJoint2
+    400018: Left_ToeJoint2
+    400020: Left_WristJoint2
+    400022: ossetModificat_Ctrl:ChestEndEffector
+    400024: ossetModificat_Ctrl:ChestOriginEffector
+    400026: ossetModificat_Ctrl:Head
+    400028: ossetModificat_Ctrl:HeadEffector
+    400030: ossetModificat_Ctrl:Hips
+    400032: ossetModificat_Ctrl:HipsEffector
+    400034: ossetModificat_Ctrl:LeftAnkleEffector
+    400036: ossetModificat_Ctrl:LeftArm
+    400038: ossetModificat_Ctrl:LeftElbowEffector
+    400040: ossetModificat_Ctrl:LeftFoot
+    400042: ossetModificat_Ctrl:LeftFootEffector
+    400044: ossetModificat_Ctrl:LeftForeArm
+    400046: ossetModificat_Ctrl:LeftHand
+    400048: ossetModificat_Ctrl:LeftHipEffector
+    400050: ossetModificat_Ctrl:LeftKneeEffector
+    400052: ossetModificat_Ctrl:LeftLeg
+    400054: ossetModificat_Ctrl:LeftShoulder
+    400056: ossetModificat_Ctrl:LeftShoulderEffector
+    400058: ossetModificat_Ctrl:LeftToeBase
+    400060: ossetModificat_Ctrl:LeftUpLeg
+    400062: ossetModificat_Ctrl:LeftWristEffector
+    400064: ossetModificat_Ctrl:Reference
+    400066: ossetModificat_Ctrl:RightAnkleEffector
+    400068: ossetModificat_Ctrl:RightArm
+    400070: ossetModificat_Ctrl:RightElbowEffector
+    400072: ossetModificat_Ctrl:RightFoot
+    400074: ossetModificat_Ctrl:RightFootEffector
+    400076: ossetModificat_Ctrl:RightForeArm
+    400078: ossetModificat_Ctrl:RightHand
+    400080: ossetModificat_Ctrl:RightHipEffector
+    400082: ossetModificat_Ctrl:RightKneeEffector
+    400084: ossetModificat_Ctrl:RightLeg
+    400086: ossetModificat_Ctrl:RightShoulder
+    400088: ossetModificat_Ctrl:RightShoulderEffector
+    400090: ossetModificat_Ctrl:RightToeBase
+    400092: ossetModificat_Ctrl:RightUpLeg
+    400094: ossetModificat_Ctrl:RightWristEffector
+    400096: ossetModificat_Ctrl:Spine
+    400098: Right_AnkleJoint2
+    400100: Right_ArmJoint2
+    400102: Right_ElbowJoint2
+    400104: Right_KneeJoint2
+    400106: Right_ShoulderJoint2
+    400108: Right_ThighJoint2
+    400110: Right_ToeJoint2
+    400112: Right_WristJoint2
+    400114: //RootNode
+    7400000: prepare2dance
+    7400002: Take 004_dancing_queen
+    7400004: Take 002_arrive_cut
+    7400006: Take 002_arrive
+    7400008: Take 002_cut
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: prepare2dance
+      takeName: Take 003
+      firstFrame: 295
+      lastFrame: 331
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: HipJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/HeadJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Left_ShoulderJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Left_ShoulderJoint2/Left_ArmJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Left_ShoulderJoint2/Left_ArmJoint2/Left_ElbowJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Left_ShoulderJoint2/Left_ArmJoint2/Left_ElbowJoint2/Left_WristJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Right_ShoulderJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Right_ShoulderJoint2/Right_ArmJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Right_ShoulderJoint2/Right_ArmJoint2/Right_ElbowJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Right_ShoulderJoint2/Right_ArmJoint2/Right_ElbowJoint2/Right_WristJoint2
+        weight: 1
+      - path: HipJoint2/Left_ThighJoint2
+        weight: 1
+      - path: HipJoint2/Left_ThighJoint2/Left_KneeJoint2
+        weight: 1
+      - path: HipJoint2/Left_ThighJoint2/Left_KneeJoint2/Left_AnkleJoint2
+        weight: 1
+      - path: HipJoint2/Left_ThighJoint2/Left_KneeJoint2/Left_AnkleJoint2/Left_ToeJoint2
+        weight: 1
+      - path: HipJoint2/Right_ThighJoint2
+        weight: 1
+      - path: HipJoint2/Right_ThighJoint2/Right_KneeJoint2
+        weight: 1
+      - path: HipJoint2/Right_ThighJoint2/Right_KneeJoint2/Right_AnkleJoint2
+        weight: 1
+      - path: HipJoint2/Right_ThighJoint2/Right_KneeJoint2/Right_AnkleJoint2/Right_ToeJoint2
+        weight: 1
+      - path: ossetModificat_Ctrl:Reference
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:ChestEndEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:ChestOriginEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:HeadEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:LeftUpLeg
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:LeftUpLeg/ossetModificat_Ctrl:LeftLeg
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:LeftUpLeg/ossetModificat_Ctrl:LeftLeg/ossetModificat_Ctrl:LeftFoot
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:LeftUpLeg/ossetModificat_Ctrl:LeftLeg/ossetModificat_Ctrl:LeftFoot/ossetModificat_Ctrl:LeftToeBase
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:RightUpLeg
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:RightUpLeg/ossetModificat_Ctrl:RightLeg
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:RightUpLeg/ossetModificat_Ctrl:RightLeg/ossetModificat_Ctrl:RightFoot
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:RightUpLeg/ossetModificat_Ctrl:RightLeg/ossetModificat_Ctrl:RightFoot/ossetModificat_Ctrl:RightToeBase
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:Head
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:LeftShoulder
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:LeftShoulder/ossetModificat_Ctrl:LeftArm
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:LeftShoulder/ossetModificat_Ctrl:LeftArm/ossetModificat_Ctrl:LeftForeArm
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:LeftShoulder/ossetModificat_Ctrl:LeftArm/ossetModificat_Ctrl:LeftForeArm/ossetModificat_Ctrl:LeftHand
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:RightShoulder
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:RightShoulder/ossetModificat_Ctrl:RightArm
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:RightShoulder/ossetModificat_Ctrl:RightArm/ossetModificat_Ctrl:RightForeArm
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:RightShoulder/ossetModificat_Ctrl:RightArm/ossetModificat_Ctrl:RightForeArm/ossetModificat_Ctrl:RightHand
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:HipsEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftAnkleEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftElbowEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftFootEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftHipEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftKneeEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftShoulderEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftWristEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightAnkleEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightElbowEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightFootEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightHipEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightKneeEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightShoulderEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightWristEffector
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Take 004_dancing_queen
+      takeName: Take 004
+      firstFrame: 331
+      lastFrame: 919
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0
+        functionName: playSong
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: HipJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/HeadJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Left_ShoulderJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Left_ShoulderJoint2/Left_ArmJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Left_ShoulderJoint2/Left_ArmJoint2/Left_ElbowJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Left_ShoulderJoint2/Left_ArmJoint2/Left_ElbowJoint2/Left_WristJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Right_ShoulderJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Right_ShoulderJoint2/Right_ArmJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Right_ShoulderJoint2/Right_ArmJoint2/Right_ElbowJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Right_ShoulderJoint2/Right_ArmJoint2/Right_ElbowJoint2/Right_WristJoint2
+        weight: 1
+      - path: HipJoint2/Left_ThighJoint2
+        weight: 1
+      - path: HipJoint2/Left_ThighJoint2/Left_KneeJoint2
+        weight: 1
+      - path: HipJoint2/Left_ThighJoint2/Left_KneeJoint2/Left_AnkleJoint2
+        weight: 1
+      - path: HipJoint2/Left_ThighJoint2/Left_KneeJoint2/Left_AnkleJoint2/Left_ToeJoint2
+        weight: 1
+      - path: HipJoint2/Right_ThighJoint2
+        weight: 1
+      - path: HipJoint2/Right_ThighJoint2/Right_KneeJoint2
+        weight: 1
+      - path: HipJoint2/Right_ThighJoint2/Right_KneeJoint2/Right_AnkleJoint2
+        weight: 1
+      - path: HipJoint2/Right_ThighJoint2/Right_KneeJoint2/Right_AnkleJoint2/Right_ToeJoint2
+        weight: 1
+      - path: ossetModificat_Ctrl:Reference
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:ChestEndEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:ChestOriginEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:HeadEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:LeftUpLeg
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:LeftUpLeg/ossetModificat_Ctrl:LeftLeg
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:LeftUpLeg/ossetModificat_Ctrl:LeftLeg/ossetModificat_Ctrl:LeftFoot
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:LeftUpLeg/ossetModificat_Ctrl:LeftLeg/ossetModificat_Ctrl:LeftFoot/ossetModificat_Ctrl:LeftToeBase
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:RightUpLeg
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:RightUpLeg/ossetModificat_Ctrl:RightLeg
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:RightUpLeg/ossetModificat_Ctrl:RightLeg/ossetModificat_Ctrl:RightFoot
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:RightUpLeg/ossetModificat_Ctrl:RightLeg/ossetModificat_Ctrl:RightFoot/ossetModificat_Ctrl:RightToeBase
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:Head
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:LeftShoulder
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:LeftShoulder/ossetModificat_Ctrl:LeftArm
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:LeftShoulder/ossetModificat_Ctrl:LeftArm/ossetModificat_Ctrl:LeftForeArm
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:LeftShoulder/ossetModificat_Ctrl:LeftArm/ossetModificat_Ctrl:LeftForeArm/ossetModificat_Ctrl:LeftHand
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:RightShoulder
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:RightShoulder/ossetModificat_Ctrl:RightArm
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:RightShoulder/ossetModificat_Ctrl:RightArm/ossetModificat_Ctrl:RightForeArm
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:RightShoulder/ossetModificat_Ctrl:RightArm/ossetModificat_Ctrl:RightForeArm/ossetModificat_Ctrl:RightHand
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:HipsEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftAnkleEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftElbowEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftFootEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftHipEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftKneeEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftShoulderEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftWristEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightAnkleEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightElbowEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightFootEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightHipEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightKneeEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightShoulderEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightWristEffector
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Take 002_arrive
+      takeName: Take 002
+      firstFrame: 1
+      lastFrame: 295
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: HipJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/HeadJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Left_ShoulderJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Left_ShoulderJoint2/Left_ArmJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Left_ShoulderJoint2/Left_ArmJoint2/Left_ElbowJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Left_ShoulderJoint2/Left_ArmJoint2/Left_ElbowJoint2/Left_WristJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Right_ShoulderJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Right_ShoulderJoint2/Right_ArmJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Right_ShoulderJoint2/Right_ArmJoint2/Right_ElbowJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Right_ShoulderJoint2/Right_ArmJoint2/Right_ElbowJoint2/Right_WristJoint2
+        weight: 1
+      - path: HipJoint2/Left_ThighJoint2
+        weight: 1
+      - path: HipJoint2/Left_ThighJoint2/Left_KneeJoint2
+        weight: 1
+      - path: HipJoint2/Left_ThighJoint2/Left_KneeJoint2/Left_AnkleJoint2
+        weight: 1
+      - path: HipJoint2/Left_ThighJoint2/Left_KneeJoint2/Left_AnkleJoint2/Left_ToeJoint2
+        weight: 1
+      - path: HipJoint2/Right_ThighJoint2
+        weight: 1
+      - path: HipJoint2/Right_ThighJoint2/Right_KneeJoint2
+        weight: 1
+      - path: HipJoint2/Right_ThighJoint2/Right_KneeJoint2/Right_AnkleJoint2
+        weight: 1
+      - path: HipJoint2/Right_ThighJoint2/Right_KneeJoint2/Right_AnkleJoint2/Right_ToeJoint2
+        weight: 1
+      - path: ossetModificat_Ctrl:Reference
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:ChestEndEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:ChestOriginEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:HeadEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:LeftUpLeg
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:LeftUpLeg/ossetModificat_Ctrl:LeftLeg
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:LeftUpLeg/ossetModificat_Ctrl:LeftLeg/ossetModificat_Ctrl:LeftFoot
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:LeftUpLeg/ossetModificat_Ctrl:LeftLeg/ossetModificat_Ctrl:LeftFoot/ossetModificat_Ctrl:LeftToeBase
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:RightUpLeg
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:RightUpLeg/ossetModificat_Ctrl:RightLeg
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:RightUpLeg/ossetModificat_Ctrl:RightLeg/ossetModificat_Ctrl:RightFoot
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:RightUpLeg/ossetModificat_Ctrl:RightLeg/ossetModificat_Ctrl:RightFoot/ossetModificat_Ctrl:RightToeBase
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:Head
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:LeftShoulder
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:LeftShoulder/ossetModificat_Ctrl:LeftArm
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:LeftShoulder/ossetModificat_Ctrl:LeftArm/ossetModificat_Ctrl:LeftForeArm
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:LeftShoulder/ossetModificat_Ctrl:LeftArm/ossetModificat_Ctrl:LeftForeArm/ossetModificat_Ctrl:LeftHand
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:RightShoulder
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:RightShoulder/ossetModificat_Ctrl:RightArm
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:RightShoulder/ossetModificat_Ctrl:RightArm/ossetModificat_Ctrl:RightForeArm
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:RightShoulder/ossetModificat_Ctrl:RightArm/ossetModificat_Ctrl:RightForeArm/ossetModificat_Ctrl:RightHand
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:HipsEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftAnkleEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftElbowEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftFootEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftHipEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftKneeEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftShoulderEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftWristEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightAnkleEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightElbowEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightFootEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightHipEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightKneeEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightShoulderEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightWristEffector
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Take 002_cut
+      takeName: Take 002
+      firstFrame: 117
+      lastFrame: 295
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: HipJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/HeadJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Left_ShoulderJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Left_ShoulderJoint2/Left_ArmJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Left_ShoulderJoint2/Left_ArmJoint2/Left_ElbowJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Left_ShoulderJoint2/Left_ArmJoint2/Left_ElbowJoint2/Left_WristJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Right_ShoulderJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Right_ShoulderJoint2/Right_ArmJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Right_ShoulderJoint2/Right_ArmJoint2/Right_ElbowJoint2
+        weight: 1
+      - path: HipJoint2/ChestJoint2/Right_ShoulderJoint2/Right_ArmJoint2/Right_ElbowJoint2/Right_WristJoint2
+        weight: 1
+      - path: HipJoint2/Left_ThighJoint2
+        weight: 1
+      - path: HipJoint2/Left_ThighJoint2/Left_KneeJoint2
+        weight: 1
+      - path: HipJoint2/Left_ThighJoint2/Left_KneeJoint2/Left_AnkleJoint2
+        weight: 1
+      - path: HipJoint2/Left_ThighJoint2/Left_KneeJoint2/Left_AnkleJoint2/Left_ToeJoint2
+        weight: 1
+      - path: HipJoint2/Right_ThighJoint2
+        weight: 1
+      - path: HipJoint2/Right_ThighJoint2/Right_KneeJoint2
+        weight: 1
+      - path: HipJoint2/Right_ThighJoint2/Right_KneeJoint2/Right_AnkleJoint2
+        weight: 1
+      - path: HipJoint2/Right_ThighJoint2/Right_KneeJoint2/Right_AnkleJoint2/Right_ToeJoint2
+        weight: 1
+      - path: ossetModificat_Ctrl:Reference
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:ChestEndEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:ChestOriginEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:HeadEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:LeftUpLeg
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:LeftUpLeg/ossetModificat_Ctrl:LeftLeg
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:LeftUpLeg/ossetModificat_Ctrl:LeftLeg/ossetModificat_Ctrl:LeftFoot
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:LeftUpLeg/ossetModificat_Ctrl:LeftLeg/ossetModificat_Ctrl:LeftFoot/ossetModificat_Ctrl:LeftToeBase
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:RightUpLeg
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:RightUpLeg/ossetModificat_Ctrl:RightLeg
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:RightUpLeg/ossetModificat_Ctrl:RightLeg/ossetModificat_Ctrl:RightFoot
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:RightUpLeg/ossetModificat_Ctrl:RightLeg/ossetModificat_Ctrl:RightFoot/ossetModificat_Ctrl:RightToeBase
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:Head
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:LeftShoulder
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:LeftShoulder/ossetModificat_Ctrl:LeftArm
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:LeftShoulder/ossetModificat_Ctrl:LeftArm/ossetModificat_Ctrl:LeftForeArm
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:LeftShoulder/ossetModificat_Ctrl:LeftArm/ossetModificat_Ctrl:LeftForeArm/ossetModificat_Ctrl:LeftHand
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:RightShoulder
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:RightShoulder/ossetModificat_Ctrl:RightArm
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:RightShoulder/ossetModificat_Ctrl:RightArm/ossetModificat_Ctrl:RightForeArm
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:Hips/ossetModificat_Ctrl:Spine/ossetModificat_Ctrl:RightShoulder/ossetModificat_Ctrl:RightArm/ossetModificat_Ctrl:RightForeArm/ossetModificat_Ctrl:RightHand
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:HipsEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftAnkleEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftElbowEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftFootEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftHipEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftKneeEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftShoulderEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:LeftWristEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightAnkleEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightElbowEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightFootEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightHipEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightKneeEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightShoulderEffector
+        weight: 0
+      - path: ossetModificat_Ctrl:Reference/ossetModificat_Ctrl:RightWristEffector
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human:
+    - boneName: HipJoint2
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Left_ThighJoint2
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Right_ThighJoint2
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Left_KneeJoint2
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Right_KneeJoint2
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Left_AnkleJoint2
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Right_AnkleJoint2
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ChestJoint2
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: HeadJoint2
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Left_ShoulderJoint2
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Right_ShoulderJoint2
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Left_ArmJoint2
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Right_ArmJoint2
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Left_ElbowJoint2
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Right_ElbowJoint2
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Left_WristJoint2
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Right_WristJoint2
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Left_ToeJoint2
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Right_ToeJoint2
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: TeddyBear_characterised_Modified_Tpose(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Teddy_Bear 1
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: HipJoint2
+      position: {x: -2.767405e-18, y: 0.44603056, z: -0.004562962}
+      rotation: {x: -0.000000005098128, y: -0.7071068, z: -0.000000005098128, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Right_ThighJoint2
+      position: {x: 0.0026949616, y: -0.04790278, z: -0.15449299}
+      rotation: {x: 0.7333284, y: -0.6798746, z: -0.0000000050654605, w: 0.000000005463723}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Right_KneeJoint2
+      position: {x: 0.19909889, y: -0.00000004834631, z: -7.638334e-16}
+      rotation: {x: 0.011240086, y: -0.042146314, z: 0.25744027, w: 0.9653092}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Right_AnkleJoint2
+      position: {x: 0.16275832, y: -0.0024606925, z: -0.00036370748}
+      rotation: {x: -0.024392748, y: 0.036161378, z: -0.5586859, w: 0.8282316}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Right_ToeJoint2
+      position: {x: 0.058388855, y: -0.0036440012, z: -1.0658141e-16}
+      rotation: {x: -4.2655576e-16, y: 2.1609332e-16, z: -0.049402334, w: 0.998779}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Left_ThighJoint2
+      position: {x: 0.002694966, y: -0.047902305, z: 0.15449297}
+      rotation: {x: 0.6798746, y: 0.7333284, z: -4.4240925e-16, w: 5.67257e-16}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Left_KneeJoint2
+      position: {x: -0.1990991, y: -4.4408918e-17, z: 5.3290704e-17}
+      rotation: {x: -2.359224e-16, y: 2.1510571e-16, z: 5.8221657e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Left_AnkleJoint2
+      position: {x: -0.1418598, y: -0.07862165, z: -0.013822556}
+      rotation: {x: 4.9303807e-32, y: -1.2325952e-32, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Left_ToeJoint2
+      position: {x: -0.043673642, y: 0.03892453, z: 3.5527136e-17}
+      rotation: {x: 4.9303824e-32, y: 5.916457e-31, z: -1.110223e-15, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ChestJoint2
+      position: {x: -0.008721974, y: 0.093428895, z: -1.9243288e-17}
+      rotation: {x: -8.16812e-17, y: 7.306238e-17, z: -0.63429743, w: 0.7730891}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Right_ShoulderJoint2
+      position: {x: -0.13323478, y: -0.01004413, z: -0.11352299}
+      rotation: {x: 0.57720983, y: 0.40844688, z: -0.5133273, w: 0.4863076}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Right_ArmJoint2
+      position: {x: 0.071219735, y: -0.002060022, z: -2.6645352e-17}
+      rotation: {x: -0.03205947, y: 0.018764889, z: -0.02948926, w: 0.9988746}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Right_ElbowJoint2
+      position: {x: 0.1483732, y: -0.0040118694, z: 0.008885919}
+      rotation: {x: 0.7387422, y: -0.021865161, z: -0.04865539, w: 0.6718739}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Right_WristJoint2
+      position: {x: 0.10472901, y: 0.00065206614, z: -0.0037415023}
+      rotation: {x: -0.70349973, y: -0.05300754, z: 0.054088965, w: 0.70664895}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Left_ShoulderJoint2
+      position: {x: -0.13323463, y: -0.010044155, z: 0.113522924}
+      rotation: {x: -0.44851604, y: 0.54665655, z: 0.44851604, w: 0.54665655}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Left_ArmJoint2
+      position: {x: -0.07078988, y: -0.008078394, z: 8.881784e-18}
+      rotation: {x: -0.000912179, y: 0.032546785, z: 0.037398085, w: 0.9987699}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Left_ElbowJoint2
+      position: {x: -0.14806104, y: 0.0023029135, z: -0.013507312}
+      rotation: {x: 0.055067737, y: -0.03449362, z: -0.045598198, w: 0.99684435}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Left_WristJoint2
+      position: {x: -0.10451553, y: -0.003166962, z: 0.0070058475}
+      rotation: {x: -0.019915178, y: -0.097491845, z: -0.19914892, w: 0.97490436}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: HeadJoint2
+      position: {x: -0.18933514, y: 1.7763568e-17, z: 1.0108322e-16}
+      rotation: {x: -2.46519e-32, y: 1.6640035e-31, z: -6.661338e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: e04f075d780b311429b910fadc1f3329,
+    type: 3}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

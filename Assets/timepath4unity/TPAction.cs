@@ -75,8 +75,25 @@ public  class TPAction : TPActionBase
 
         }
 
-    
-        public void leaveM()
+    public void approachObject(GameObject go )
+    {
+
+        if (go)
+        {
+            TPAgent me = TP.GetAgent(mindID);
+            Body b = me.GetComponent<Body>();
+
+            b.NavGoTo(go.transform.position);
+
+        }
+
+
+    }
+
+
+
+
+    public void leaveM()
         {
             TPAgent me = TP.GetAgent(mindID);
             Body b = me.GetComponent<Body>();
@@ -271,7 +288,14 @@ public  class TPAction : TPActionBase
         }
 
 
+    public void playAnimation(string animname) {
+        TPAgent me = TP.GetAgent(mindID);
+        Body b = me.GetComponent<Body>();
+        b.AnimPlay(animname);
 
+
+
+    }
     
 
 

@@ -40,7 +40,7 @@ public class MeteoriteSpawner : MonoBehaviour {
                 
             sphere.transform.localScale = new Vector3(size, size, size);
             sphere.GetComponent<Renderer>().material.color = new Color(Random.value, Random.value, Random.value);
-            sphere.transform.position = transform.position + (Random.insideUnitSphere * 30);
+            sphere.transform.position = transform.position + (Random.insideUnitSphere * 20);
             Rigidbody rb = sphere.AddComponent<Rigidbody>();
             rb.drag = 5;
 
