@@ -9,13 +9,13 @@ using timepath4unity;
 
 /*!
 \brief
-TPPAction implements a Timepath action.
+TPAction implements a Timepath action.
 It will be performed by a TPPersonality. 
 It can also be part of a TPPlotSentence within a story plot (TPPlot).
 
  Important:  
 do NOT declare class variables, since each Action defined will be executed separately (similar to static methods). 
- It will work for methods called within one same Action, but it is dangerous.
+ It might work for methods called within one same Action, but it is dangerous way to proceed, no garantees.
   
 To deal with objects of the scene, it is usefull to declare a mental bag with the elements needed
 To get the agent, use:  TPAgent me = TP.GetAgent(mindID);
@@ -67,7 +67,6 @@ public  class TPAction : TPActionBase
             {
                 TPAgent me = TP.GetAgent(mindID);
                 Body b = me.GetComponent<Body>();
-
                 b.NavGoTo(go.transform.position);
 
             }
@@ -82,7 +81,6 @@ public  class TPAction : TPActionBase
         {
             TPAgent me = TP.GetAgent(mindID);
             Body b = me.GetComponent<Body>();
-
             b.NavGoTo(go.transform.position);
 
         }
@@ -103,7 +101,7 @@ public  class TPAction : TPActionBase
             if (bag.M)
             {
                 TPResource res = me.MyPerso.GetResourceByName("captured_meteorite");
-                res.ResMaxAvailable = 0.0f;
+                res.AmountAvailable = 0.0f;
 
                 bag.M.GetComponent<Rigidbody>().isKinematic = false;
 
@@ -133,16 +131,10 @@ public  class TPAction : TPActionBase
         Body b = me.GetComponent<Body>();
         TPMentalBag bag = me.GetComponent<TPMentalBag>();
         approachNearestObjectWithTag(bag.destinationTag);
-
-
-
-
+        
           RaycastHit hitInfo;
             Vector3 dir = transform.TransformDirection(Vector3.down);
-
-
             //define the region of arrival with your tag. make sure the baking is done AFTER the regions are frozen, and that they all are rendered.
-
                 if (Physics.Raycast(transform.position , dir, out hitInfo, 10))
                 {
 
@@ -154,42 +146,20 @@ public  class TPAction : TPActionBase
                     }
                   
                 }
-
-
-        /*
-
-      
-//        if ( b.NavIsAtTarget())
-        bool check = b.NavHasArrived();
-        Debug.Log("target position:" + b.NavTarget().ToString() + " my position: " + b.transform.position.ToString() +" " + check.ToString() );
-        if (b.NavHasArrived())
-
-        {
-            b.NavStop();
-            leaveM();
-
-        }
-*/
-
-
     }
 
-
-
-
-
+    
 
         public void selectM()
         {
-
+        
             TPAgent me = TP.GetAgent(mindID);
             Body b = me.GetComponent<Body>();
             TPMentalBag bag = me.GetComponent<TPMentalBag>();
 
-            if(bag.M ==null){
+        if (bag.M ==null){
                 GameObject go = TPPerception.FindClosestObjectTagged(mindID, "pickme");
                 if(go != null){
-                 //   Debug.Log("gameObject is:" + go.name);
                     bag.M = go.GetComponent<Meteorite>();
                     bag.M.tag = "selected";
                 }
@@ -197,7 +167,6 @@ public  class TPAction : TPActionBase
             else if (bag.M.tag != "selected") //because it fell on another region, for example
             {
                 leaveM();
-
             }
 
 
@@ -205,15 +174,11 @@ public  class TPAction : TPActionBase
      
         public void aproachM(float minDist)
         {
-            
-            
+
+          //  Debug.Log("approaching M" + minDist);
             TPAgent me = TP.GetAgent(mindID);
             Body b = me.GetComponent<Body>();
             TPMentalBag bag = me.GetComponent<TPMentalBag>();
-
-
-
-
 
             if (bag.M)
             { 
@@ -281,7 +246,7 @@ public  class TPAction : TPActionBase
                     b.ReachStop();
                     b.HeadLookStop();
                     
-                    me.MyPerso.GetResourceByName("captured_meteorite").ResMaxAvailable = 1.0f;
+                    me.MyPerso.GetResourceByName("captured_meteorite").AmountAvailable = 1.0f;
 
                 } 
             }

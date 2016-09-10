@@ -18,12 +18,12 @@ do NOT declare class variables, since each Action defined will be executed separ
  It will work for methods called within one same Perception, but it is dangerous.
   
 To deal with objects of the scene, it is usefull to declare a mental bag with the elements needed
-To get the agent, use:  TPAgent me = TP.GetAgent(mindID);
- 
+
+    To get the agent, use:  TPAgent me = TP.GetAgent(mindID);
  and eventually the ADAPT body:  
- Body b = me.GetComponent<Body>();
+     Body b = me.GetComponent<Body>();
 or the mental bag:
-  TPMentalBag bag = me.GetComponent<TPMentalBag>();
+    TPMentalBag bag = me.GetComponent<TPMentalBag>();
  * 
  * 
  * 
@@ -98,21 +98,24 @@ using timepath4unity;
             TPResource res = TP.GetAgent(this.mindID).MyPerso.GetResourceByName(name);
             if (res == null)
                 value = 0.0;
-            else if (res.ResMaxAvailable > 1.0)
+            else if (res.AmountAvailable > 1.0)
                 value = 1.0;
-            else if (res.ResMaxAvailable <= 0)
+            else if (res.AmountAvailable <= 0)
                 value = 0.0;
             else
-                value = res.ResMaxAvailable;
+                value = res.AmountAvailable;
 
         }
 
         public void doIHaveAtLeastOneOfResource(string name)
         {
+            
+
             TPResource res = TP.GetAgent(this.mindID).MyPerso.GetResourceByName(name);
+       
             if (res == null)
                 value = 0.0;
-            else if (res.ResMaxAvailable >= 1.0)
+            else if (res.AmountAvailable >= 1.0)
                 value = 1.0;
             else
                 value = 0.0;
@@ -158,41 +161,6 @@ using timepath4unity;
             return closest;
         }
 
-
-
-
-
-
-
-        public static GameObject FindClosestCharacterWithRole(int myID, string roleName)
-        {
-            GameObject target = null;
-            TPAgent me = TP.GetAgent(myID);
-            TPRole therole = TPRole.getRole(roleName);
-            TPAgent[] agents = Resources.FindObjectsOfTypeAll<TPAgent>();
-            foreach (TPAgent a in agents)
-            {
-                foreach (TPRole r in a.MyRoles)
-                {
-                    if (r.Equals(therole))
-                    {
-                        if (target != null)
-                        {
-                            float dist = (me.transform.position - target.transform.position).magnitude;
-                            float newdist = (me.transform.position - a.transform.position).magnitude;
-                            if (newdist < dist)
-                                target = a.gameObject;
-                        }
-                        else
-                        {
-                            target = a.gameObject;
-                        }
-                    }
-                }
-            }
-            return target;
-
-        }
 
         public static GameObject[] FindObjectTaggedInRadius(GameObject target, string theTag, float far, float near)
         {
