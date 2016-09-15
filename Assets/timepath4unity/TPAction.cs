@@ -52,7 +52,6 @@ public  class TPAction : TPActionBase
             {
                 TPAgent me = TP.GetAgent(mindID);
                 Body b = me.GetComponent<Body>();
-
                 b.NavGoTo(go.transform.position);
             }
 
@@ -246,7 +245,7 @@ public  class TPAction : TPActionBase
                     b.ReachStop();
                     b.HeadLookStop();
                     
-                    me.MyPerso.GetResourceByName("captured_meteorite").AmountAvailable = 1.0f;
+                    //me.MyPerso.GetResourceByName("captured_meteorite").AmountAvailable = 1.0f;
 
                 } 
             }

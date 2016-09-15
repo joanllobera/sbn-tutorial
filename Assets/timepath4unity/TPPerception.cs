@@ -121,19 +121,37 @@ using timepath4unity;
                 value = 0.0;
         }
 
-      
 
-        //! \todo allow functions not affecting value to run only at startup
-          
-
-
-
+    public void iHaveObjectWithTag(string name)
+    {
+        TPAgent me = TP.GetAgent(mindID);
+        TPMentalBag bag = me.GetComponent<TPMentalBag>();
 
 
-        #endregion
+        if (bag.M)
+        {
+            if (bag.M.tag.Equals(name))
+                value = 1.0;
+            else
+                value = 0.0;
+        }
+        else
+        {
+            value = 0.0;
 
-        #region OTHER USEFUL FUNCTIONS___________________________________________________________________
-        public static GameObject FindClosestObjectTagged(int agentID, string theTag)
+        }
+    }
+
+        
+
+
+
+
+
+    #endregion
+
+    #region OTHER USEFUL FUNCTIONS___________________________________________________________________
+    public static GameObject FindClosestObjectTagged(int agentID, string theTag)
         {
             GameObject[] gos;
             gos = GameObject.FindGameObjectsWithTag(theTag);

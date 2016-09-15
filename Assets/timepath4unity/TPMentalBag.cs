@@ -29,46 +29,6 @@ public class TPMentalBag : MonoBehaviour {
 	
 	}
 
-    /*
-    
-    void OnCollisionEnter(Collision collision)
-    {
-
-        Debug.Log("the tag I am in is:" + collision.collider.tag);
-
-        if (gameObject.tag.Equals(destinationTag))
-        {
-            onDestination = 1.0f;
-        }
-        else
-        {
-            onDestination = 0.0f;
-
-        }
-    
-
-    }
-
-
-
-    void OnTriggerEnter(Collider c)
-    {
-
-        Debug.Log("the trigger is from object :" + c.tag);
-
-        if (c.tag.Equals(destinationTag))
-        {
-            onDestination = 1.0f;
-        }
-        else
-        {
-            onDestination = 0.0f;
-
-        }
-
-
-    }*/
-
 
 
 
