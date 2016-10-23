@@ -20,9 +20,10 @@ do NOT declare class variables, since each Action defined will be executed separ
 To deal with objects of the scene, it is usefull to declare a mental bag with the elements needed
 To get the agent, use:  TPAgent me = TP.GetAgent(mindID);
  
- and eventually the ADAPT body:  
+ and eventually the body, either ADAPT or mecanim:  
  Body b = me.GetComponent<Body>();
-or the mental bag:
+
+    or the mental bag:
   TPMentalBag bag = me.GetComponent<TPMentalBag>();
  
  
@@ -51,7 +52,7 @@ public  class TPAction : TPActionBase
             if (go)
             {
                 TPAgent me = TP.GetAgent(mindID);
-                Body b = me.GetComponent<Body>();
+                Body b = me.MyBody.GetComponent<Body>();
                 b.NavGoTo(go.transform.position);
             }
 
@@ -65,7 +66,7 @@ public  class TPAction : TPActionBase
             if(go)
             {
                 TPAgent me = TP.GetAgent(mindID);
-                Body b = me.GetComponent<Body>();
+                Body b = me.MyBody.GetComponent<Body>();
                 b.NavGoTo(go.transform.position);
 
             }
@@ -79,7 +80,7 @@ public  class TPAction : TPActionBase
         if (go)
         {
             TPAgent me = TP.GetAgent(mindID);
-            Body b = me.GetComponent<Body>();
+            Body b = me.MyBody.GetComponent<Body>();
             b.NavGoTo(go.transform.position);
 
         }
@@ -93,7 +94,7 @@ public  class TPAction : TPActionBase
     public void leaveM()
         {
             TPAgent me = TP.GetAgent(mindID);
-            Body b = me.GetComponent<Body>();
+            Body b = me.MyBody.GetComponent<Body>();
 
             TPMentalBag bag = me.GetComponent<TPMentalBag>();
             
@@ -127,7 +128,7 @@ public  class TPAction : TPActionBase
 
 
         TPAgent me = TP.GetAgent(mindID);
-        Body b = me.GetComponent<Body>();
+        Body b = me.MyBody.GetComponent<Body>();
         TPMentalBag bag = me.GetComponent<TPMentalBag>();
         approachNearestObjectWithTag(bag.destinationTag);
         
@@ -153,7 +154,7 @@ public  class TPAction : TPActionBase
         {
         
             TPAgent me = TP.GetAgent(mindID);
-            Body b = me.GetComponent<Body>();
+            Body b = me.MyBody.GetComponent<Body>();
             TPMentalBag bag = me.GetComponent<TPMentalBag>();
 
         if (bag.M ==null){
@@ -176,7 +177,7 @@ public  class TPAction : TPActionBase
 
           //  Debug.Log("approaching M" + minDist);
             TPAgent me = TP.GetAgent(mindID);
-            Body b = me.GetComponent<Body>();
+            Body b = me.MyBody.GetComponent<Body>();
             TPMentalBag bag = me.GetComponent<TPMentalBag>();
 
             if (bag.M)
@@ -196,7 +197,7 @@ public  class TPAction : TPActionBase
         public void lookM(float lookDist)
         {
             TPAgent me = TP.GetAgent(mindID);
-            Body b = me.GetComponent<Body>();
+            Body b = me.MyBody.GetComponent<Body>();
             TPMentalBag bag = me.GetComponent<TPMentalBag>();
 
             if (bag.M)
@@ -212,7 +213,7 @@ public  class TPAction : TPActionBase
 
         public void reachM(float reachDist){
             TPAgent me = TP.GetAgent(mindID);
-            Body b = me.GetComponent<Body>();
+            Body b = me.MyBody.GetComponent<Body>();
             TPMentalBag bag = me.GetComponent<TPMentalBag>();
 
             if (bag.M)
@@ -225,7 +226,7 @@ public  class TPAction : TPActionBase
 
         public void takeControlOverM(float reachDist){
             TPAgent me = TP.GetAgent(mindID);
-            Body b = me.GetComponent<Body>();
+            Body b = me.MyBody.GetComponent<Body>();
             TPMentalBag bag = me.GetComponent<TPMentalBag>();
 
 
@@ -254,7 +255,7 @@ public  class TPAction : TPActionBase
 
     public void playAnimation(string animname) {
         TPAgent me = TP.GetAgent(mindID);
-        Body b = me.GetComponent<Body>();
+        Body b = me.MyBody.GetComponent<Body>();
         b.AnimPlay(animname);
 
 
