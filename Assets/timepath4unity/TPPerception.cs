@@ -71,7 +71,7 @@ using timepath4unity;
 
                 if (Physics.Raycast(transform.position , dir, out hitInfo, 10))
                 {
-                    Debug.Log("collided tag: " + hitInfo.collider.tag);
+                 //   Debug.Log("collided tag: " + hitInfo.collider.tag);
 
                     if (hitInfo.collider.tag == bag.destinationTag )
                     {
@@ -89,11 +89,20 @@ using timepath4unity;
 
         }
 
+    public void perceiveLow()
+    {
+
+        value = 0.096;
+    }
+
+    public void perceiveHigh()
+    {
+        value = 0.98;
+    }
 
 
 
-
-        public void getResourceCount(string name)
+    public void getResourceCount(string name)
         {
             TPResource res = TP.GetAgent(this.mindID).MyPerso.GetResourceByName(name);
             if (res == null)
