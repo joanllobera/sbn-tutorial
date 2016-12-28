@@ -36,51 +36,57 @@ public  class TPAction : TPActionBase
     {
 
 
+    protected TPMentalBag MentalBag
+    {
+        get { return Me.MyPerso.GetComponent<TPMentalBag>(); }
+    }
 
-        #region DO NOT USE CLASS VARIABLES IN TPAction
+
+
+    #region DO NOT USE CLASS VARIABLES IN TPAction
+
+
+    #endregion
+
+    #region ACTIONS
+
+
+    public void approachNearestObjectWithTag(string tag)
+        {
+            GameObject go = TPPerception.FindClosestObjectTagged(Me.MyBody, tag);
 
         
-        #endregion
-
-        #region ACTIONS
-
-
-        public void approachNearestObjectWithTag(string tag)
-        {
-            GameObject go = TPPerception.FindClosestObjectTagged(mindID, tag);
-
             if (go)
             {
-                TPAgent me = TP.GetAgent(mindID);
-                Body b = me.MyBody.GetComponent<Body>();
+                Body b = Me.MyBody.GetComponent<Body>();
                 b.NavGoTo(go.transform.position);
             }
+        
+    }
 
-        }
 
-
-        public void approachObjectCalled(string name)
+    public void approachObjectCalled(string name)
         {
 
             GameObject go = GameObject.Find(name);
-            if(go)
+      
+        if (go)
             {
-                TPAgent me = TP.GetAgent(mindID);
-                Body b = me.MyBody.GetComponent<Body>();
+                Body b = Me.MyBody.GetComponent<Body>();
                 b.NavGoTo(go.transform.position);
 
             }
 
-
+    
         }
 
+   
     public void approachObject(GameObject go )
     {
 
         if (go)
         {
-            TPAgent me = TP.GetAgent(mindID);
-            Body b = me.MyBody.GetComponent<Body>();
+            Body b = Me.MyBody.GetComponent<Body>();
             b.NavGoTo(go.transform.position);
 
         }
@@ -93,14 +99,13 @@ public  class TPAction : TPActionBase
 
     public void leaveM()
         {
-            TPAgent me = TP.GetAgent(mindID);
-            Body b = me.MyBody.GetComponent<Body>();
+            Body b = Me.MyBody.GetComponent<Body>();
 
-            TPMentalBag bag = me.GetComponent<TPMentalBag>();
+            TPMentalBag bag = Me.GetComponent<TPMentalBag>();
             
             if (bag.M)
             {
-                TPResource res = me.MyPerso.GetResourceByName("captured_meteorite");
+                TPResource res = Me.MyPerso.GetResourceByName("captured_meteorite");
                 res.AmountAvailable = 0.0f;
 
                 bag.M.GetComponent<Rigidbody>().isKinematic = false;
@@ -115,23 +120,18 @@ public  class TPAction : TPActionBase
                 }
                 bag.M = null;
 
-              
-              
-
-
+            
             }
         }
 
-    
+  
           
     public void takeMhome()
     {
 
 
-        TPAgent me = TP.GetAgent(mindID);
-        Body b = me.MyBody.GetComponent<Body>();
-        TPMentalBag bag = me.GetComponent<TPMentalBag>();
-        approachNearestObjectWithTag(bag.destinationTag);
+       Body b = Me.MyBody.GetComponent<Body>();
+        approachNearestObjectWithTag(MentalBag.destinationTag);
         
           RaycastHit hitInfo;
             Vector3 dir = transform.TransformDirection(Vector3.down);
@@ -139,27 +139,26 @@ public  class TPAction : TPActionBase
                 if (Physics.Raycast(transform.position , dir, out hitInfo, 10))
                 {
 
-                    if (hitInfo.collider.tag == bag.destinationTag)
+                    if (hitInfo.collider.tag == MentalBag.destinationTag)
                     {
 
-                        leaveM();
+                      leaveM();
 
                     }
                   
                 }
     }
 
-    
 
+  
         public void selectM()
         {
         
-            TPAgent me = TP.GetAgent(mindID);
-            Body b = me.MyBody.GetComponent<Body>();
-            TPMentalBag bag = me.GetComponent<TPMentalBag>();
+            Body b = Me.MyBody.GetComponent<Body>();
+            TPMentalBag bag = Me.GetComponent<TPMentalBag>();
 
         if (bag.M ==null){
-                GameObject go = TPPerception.FindClosestObjectTagged(mindID, "pickme");
+                GameObject go = TPPerception.FindClosestObjectTagged(Me.MyBody, "pickme");
                 if(go != null){
                     bag.M = go.GetComponent<Meteorite>();
                     bag.M.tag = "selected";
@@ -173,13 +172,14 @@ public  class TPAction : TPActionBase
 
         }
      
-        public void aproachM(float minDist)
+
+
+    public void aproachM(float minDist)
         {
 
           //  Debug.Log("approaching M" + minDist);
-            TPAgent me = TP.GetAgent(mindID);
-            Body b = me.MyBody.GetComponent<Body>();
-            TPMentalBag bag = me.GetComponent<TPMentalBag>();
+            Body b = Me.MyBody.GetComponent<Body>();
+            TPMentalBag bag = Me.GetComponent<TPMentalBag>();
 
             if (bag.M)
             { 
@@ -193,13 +193,14 @@ public  class TPAction : TPActionBase
                 }
             }
         }
+  
 
 
-        public void lookM(float lookDist)
+ 
+    public void lookM(float lookDist)
         {
-            TPAgent me = TP.GetAgent(mindID);
-            Body b = me.MyBody.GetComponent<Body>();
-            TPMentalBag bag = me.GetComponent<TPMentalBag>();
+            Body b = Me.MyBody.GetComponent<Body>();
+            TPMentalBag bag = Me.GetComponent<TPMentalBag>();
 
             if (bag.M)
             {
@@ -213,11 +214,11 @@ public  class TPAction : TPActionBase
         }
 
         public void reachM(float reachDist){
-            TPAgent me = TP.GetAgent(mindID);
-            Body b = me.MyBody.GetComponent<Body>();
-            TPMentalBag bag = me.GetComponent<TPMentalBag>();
+         
+            Body b = Me.MyBody.GetComponent<Body>();
+        TPMentalBag bag = Me.GetComponent<TPMentalBag>();
 
-            if (bag.M)
+        if (bag.M != null)
             {
                 if ((transform.position - bag.M.transform.position).sqrMagnitude < reachDist)
                     b.ReachFor(bag.M.transform.position);
@@ -226,23 +227,22 @@ public  class TPAction : TPActionBase
 
 
         public void takeControlOverM(float reachDist){
-            TPAgent me = TP.GetAgent(mindID);
-            Body b = me.MyBody.GetComponent<Body>();
-            TPMentalBag bag = me.GetComponent<TPMentalBag>();
+         
+            Body b = MyBody.GetComponent<Body>();
+        TPMentalBag bag = MentalBag;
 
-
-            if (bag.M)
+        if (bag.M)
             {
                 if ((transform.position - bag.M.transform.position).sqrMagnitude < reachDist)
                 {
 
-                    bag.M.transform.parent = b.transform;
-                    bag.M.tag = "picked";
-                 
-                    bag.M.GetComponent<Rigidbody>().isKinematic = false; //it follows the hand.
-                    bag.M.GetComponent<Rigidbody>().useGravity = false;
+                bag.M.transform.parent = b.transform;
+                bag.M.tag = "picked";
 
-                    bag.M.transform.position += new Vector3(0.0f, 2.0f, 0.0f);
+                bag.M.GetComponent<Rigidbody>().isKinematic = false; //it follows the hand.
+                bag.M.GetComponent<Rigidbody>().useGravity = false;
+
+                bag.M.transform.position += new Vector3(0.0f, 2.0f, 0.0f);
                     
                     b.ReachStop();
                     b.HeadLookStop();
@@ -255,8 +255,8 @@ public  class TPAction : TPActionBase
 
 
     public void playAnimation(string animname) {
-        TPAgent me = TP.GetAgent(mindID);
-        Body b = me.MyBody.GetComponent<Body>();
+       
+        Body b = MyBody.GetComponent<Body>();
         b.AnimPlay(animname);
 
 
@@ -266,7 +266,7 @@ public  class TPAction : TPActionBase
 
 
 
-        #endregion
+    #endregion
 
-    }
+}
 
