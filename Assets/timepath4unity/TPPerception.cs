@@ -25,7 +25,7 @@ using timepath4unity;
     {
     protected TPMentalBag MentalBag
     {
-        get { return Me.MyPerso.GetComponent<TPMentalBag>(); }
+        get { return Me.GetComponent<TPMentalBag>(); }
     }
 
     #region DO NOT USE CLASS VARIABLES IN  PERCEPTION FUNCTIONS
@@ -79,7 +79,7 @@ using timepath4unity;
     {
 
         TPMentalBag bag = MentalBag;
-        if (MentalBag.M != null)
+        if (bag.M != null)
             value = 1.0;
         else
             value = 0.0;

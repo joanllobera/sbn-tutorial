@@ -38,7 +38,7 @@ public  class TPAction : TPActionBase
 
     protected TPMentalBag MentalBag
     {
-        get { return Me.MyPerso.GetComponent<TPMentalBag>(); }
+        get { return Me.GetComponent<TPMentalBag>(); }
     }
 
 
@@ -231,7 +231,7 @@ public  class TPAction : TPActionBase
             Body b = MyBody.GetComponent<Body>();
         TPMentalBag bag = MentalBag;
 
-        if (bag.M)
+        if (bag.M != null)
             {
                 if ((transform.position - bag.M.transform.position).sqrMagnitude < reachDist)
                 {
