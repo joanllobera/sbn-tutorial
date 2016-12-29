@@ -84,6 +84,7 @@ public class UnitySteeringController : SteeringController
     void Start()
     {
         this.Target = transform.position;
+
     }
 
     void Update()
@@ -122,6 +123,11 @@ public class UnitySteeringController : SteeringController
 
     public override bool IsStopped()
     {
+        if (this.navAgent == null)
+            this.navAgent = transform.GetComponent<NavMeshAgent>();
+        if (this.navAgent == null)
+            this.navAgent = transform.gameObject.AddComponent<NavMeshAgent>();
+
         return (this.navAgent.velocity.sqrMagnitude < STOP_EPSILON);
     }
 

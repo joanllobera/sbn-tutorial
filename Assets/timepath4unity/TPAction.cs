@@ -43,6 +43,13 @@ public  class TPAction : TPActionBase
 
 
 
+    protected Body MyBody
+    {
+        get { return MentalBag.body; }
+    }
+
+
+
     #region DO NOT USE CLASS VARIABLES IN TPAction
 
 
@@ -53,12 +60,12 @@ public  class TPAction : TPActionBase
 
     public void approachNearestObjectWithTag(string tag)
         {
-            GameObject go = TPPerception.FindClosestObjectTagged(Me.MyBody, tag);
+            GameObject go = TPPerception.FindClosestObjectTagged((GameObject) MyBody.gameObject, tag);
 
         
             if (go)
             {
-                Body b = Me.MyBody.GetComponent<Body>();
+                Body b = MyBody.GetComponent<Body>();
                 b.NavGoTo(go.transform.position);
             }
         
@@ -72,7 +79,7 @@ public  class TPAction : TPActionBase
       
         if (go)
             {
-                Body b = Me.MyBody.GetComponent<Body>();
+                Body b = MyBody.GetComponent<Body>();
                 b.NavGoTo(go.transform.position);
 
             }
@@ -86,7 +93,7 @@ public  class TPAction : TPActionBase
 
         if (go)
         {
-            Body b = Me.MyBody.GetComponent<Body>();
+            Body b = MyBody.GetComponent<Body>();
             b.NavGoTo(go.transform.position);
 
         }
@@ -99,7 +106,7 @@ public  class TPAction : TPActionBase
 
     public void leaveM()
         {
-            Body b = Me.MyBody.GetComponent<Body>();
+            Body b = MyBody.GetComponent<Body>();
 
             TPMentalBag bag = Me.GetComponent<TPMentalBag>();
             
@@ -130,7 +137,7 @@ public  class TPAction : TPActionBase
     {
 
 
-       Body b = Me.MyBody.GetComponent<Body>();
+       Body b = MyBody.GetComponent<Body>();
         approachNearestObjectWithTag(MentalBag.destinationTag);
         
           RaycastHit hitInfo;
@@ -153,12 +160,15 @@ public  class TPAction : TPActionBase
   
         public void selectM()
         {
-        
-            Body b = Me.MyBody.GetComponent<Body>();
+
+
+   
+
+            Body b = MyBody.GetComponent<Body>();
             TPMentalBag bag = Me.GetComponent<TPMentalBag>();
 
         if (bag.M ==null){
-                GameObject go = TPPerception.FindClosestObjectTagged(Me.MyBody, "pickme");
+                GameObject go = TPPerception.FindClosestObjectTagged(MyBody.gameObject, "pickme");
                 if(go != null){
                     bag.M = go.GetComponent<Meteorite>();
                     bag.M.tag = "selected";
@@ -171,35 +181,71 @@ public  class TPAction : TPActionBase
 
 
         }
-     
 
+    /*
+public void aproachM(float minDist)
+    {
 
-    public void aproachM(float minDist)
+        Body b = Me.MyBody.GetComponent<Body>();
+        TPMentalBag bag = Me.GetComponent<TPMentalBag>();
+
+        if (bag.M)
         {
 
-          //  Debug.Log("approaching M" + minDist);
-            Body b = Me.MyBody.GetComponent<Body>();
-            TPMentalBag bag = Me.GetComponent<TPMentalBag>();
+        //we approach
+        if ((MyBody.transform.position - bag.M.transform.position).sqrMagnitude > minDist) //we are more far appart than 1 meter
+            {
 
-            if (bag.M)
-            { 
-                //we approach
-                if ((transform.position - bag.M.transform.position).sqrMagnitude > minDist) //we are more far appart than 1 meter
-                {
-                    b.NavGoTo(bag.M.transform.position);
 
-                }else { //we are closer than 1 meter
-                    b.NavStop();
-                }
+            if (b.NavIsStopped()) {
+                Debug.Log("i approach M");
+                // /todo why this does not work??
+                b.NavGoTo(bag.M.transform.position);
+            }
+
+        }
+        else { //we are closer than 1 meter
+                b.NavStop();
             }
         }
-  
+    }
+
+    */
+
+    public void aproachM(float minDist)
+{
+
+    TPMentalBag bag = Me.GetComponent<TPMentalBag>();
+
+    if (bag.M)
+    {
 
 
- 
+        //we approach
+        if ((bag.body.transform.position - bag.M.transform.position).sqrMagnitude > minDist) //we are more far appart than 1 meter
+        {
+
+
+            if (bag.body.NavIsStopped())
+            {
+                bag.body.NavGoTo(bag.M.transform.position);
+            }
+
+        }
+        else { //we are closer than 1 meter
+            bag.body.NavStop();
+        }
+    }
+}
+
+
+
+
+
+
     public void lookM(float lookDist)
         {
-            Body b = Me.MyBody.GetComponent<Body>();
+            Body b = MyBody.GetComponent<Body>();
             TPMentalBag bag = Me.GetComponent<TPMentalBag>();
 
             if (bag.M)
@@ -215,7 +261,7 @@ public  class TPAction : TPActionBase
 
         public void reachM(float reachDist){
          
-            Body b = Me.MyBody.GetComponent<Body>();
+            Body b = MyBody.GetComponent<Body>();
         TPMentalBag bag = Me.GetComponent<TPMentalBag>();
 
         if (bag.M != null)
@@ -239,6 +285,7 @@ public  class TPAction : TPActionBase
                 bag.M.transform.parent = b.transform;
                 bag.M.tag = "picked";
 
+                Debug.Log("i have taken control over M");
                 bag.M.GetComponent<Rigidbody>().isKinematic = false; //it follows the hand.
                 bag.M.GetComponent<Rigidbody>().useGravity = false;
 

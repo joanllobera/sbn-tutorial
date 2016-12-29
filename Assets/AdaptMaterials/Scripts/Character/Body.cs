@@ -37,6 +37,7 @@ using System.Collections;
 /// </summary>
 public class Body : MonoBehaviour
 {
+
     private Coordinator _coordinator = null;
     private SteeringController _steering = null;
 
@@ -55,10 +56,23 @@ public class Body : MonoBehaviour
     {
         get
         {
-            if (this._steering == null)
-                throw new ApplicationException(
+            if (this._steering == null) { 
+
+              SteeringController test =  this.gameObject.GetComponent<SteeringController>();
+              if( test != null)
+                {
+                    this._steering = test;
+                }
+                else {   
+               throw new ApplicationException(
                     this.gameObject.name + ": No SteeringController found!");
+                }
+             }
+
+        
+
             return this._steering;
+
         }
     }
 

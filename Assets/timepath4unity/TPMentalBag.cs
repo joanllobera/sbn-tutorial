@@ -14,6 +14,9 @@ public class TPMentalBag : MonoBehaviour {
     public Meteorite M;
     public string destinationTag;
 
+
+    public Body body;
+
     protected float onDestination = 0.0f;
 
     public float OnDestination{get{return onDestination;}}

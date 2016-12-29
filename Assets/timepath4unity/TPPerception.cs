@@ -79,7 +79,7 @@ using timepath4unity;
     {
 
         TPMentalBag bag = MentalBag;
-        if (bag.M != null)
+        if (bag.M != null && bag.M.tag.Equals("picked"))
             value = 1.0;
         else
             value = 0.0;
