@@ -9,6 +9,7 @@ Assets/timepath4unity/3rdParty
 Assets/timepath4unity/Editor
 Assets/timepath4unity/Resources
 Assets/timepath4unity/timepath4unity.dll
+Logs/*
 
 [Oo]bj/
 [Tt]emp/

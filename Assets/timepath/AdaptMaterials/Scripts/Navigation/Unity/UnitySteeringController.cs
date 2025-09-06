@@ -28,7 +28,7 @@ using System.Collections;
 public class UnitySteeringController : SteeringController
 {
     // The navmesh agent attached to us
-    private NavMeshAgent navAgent = null;
+    private UnityEngine.AI.NavMeshAgent navAgent = null;
 
     // Used when we detach from the NavMesh
     private Vector3 cachedPosition;
@@ -69,9 +69,9 @@ public class UnitySteeringController : SteeringController
     {
         this.Target = transform.position;
 
-        this.navAgent = transform.GetComponent<NavMeshAgent>();
+        this.navAgent = transform.GetComponent<UnityEngine.AI.NavMeshAgent>();
         if (this.navAgent == null)
-            this.navAgent = transform.gameObject.AddComponent<NavMeshAgent>();
+            this.navAgent = transform.gameObject.AddComponent<UnityEngine.AI.NavMeshAgent>();
         this.navAgent.updateRotation = false;
 
         this.navAgent.height = this.height;
@@ -124,9 +124,9 @@ public class UnitySteeringController : SteeringController
     public override bool IsStopped()
     {
         if (this.navAgent == null)
-            this.navAgent = transform.GetComponent<NavMeshAgent>();
+            this.navAgent = transform.GetComponent<UnityEngine.AI.NavMeshAgent>();
         if (this.navAgent == null)
-            this.navAgent = transform.gameObject.AddComponent<NavMeshAgent>();
+            this.navAgent = transform.gameObject.AddComponent<UnityEngine.AI.NavMeshAgent>();
 
         return (this.navAgent.velocity.sqrMagnitude < STOP_EPSILON);
     }
@@ -138,9 +138,9 @@ public class UnitySteeringController : SteeringController
 
     public override bool CanReach(Vector3 target)
     {
-        NavMeshPath path = new NavMeshPath();
+        UnityEngine.AI.NavMeshPath path = new UnityEngine.AI.NavMeshPath();
         this.navAgent.CalculatePath(target, path);
-        return (path.status == NavMeshPathStatus.PathComplete);
+        return (path.status == UnityEngine.AI.NavMeshPathStatus.PathComplete);
     }
 
     protected void Detach()
